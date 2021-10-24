@@ -7,7 +7,7 @@ This is a command line application developed in C# that implements a substitutio
 3. [Specification](#Specification)
 
 # Substitution
-Implement a program that implements a substitution cipher, per the below.
+This program implements a substitution cipher, per the below.
 ```
 $ ./substitution JTREKYAVOGDXPSNCUIZLFBMWHQ
 plaintext:  HELLO
@@ -21,7 +21,7 @@ A key, for example, might be the string NQXPOMAFTRHLZGECYJIUWSKDVB. This 26-char
 
 A message like HELLO, then, would be encrypted as FOLLE, replacing each of the letters according to the mapping determined by the key.
 
-Let’s write a program called substitution that enables you to encrypt messages using a substitution cipher. At the time the user executes the program, they should decide, by providing a command-line argument, on what the key should be in the secret message they’ll provide at runtime.
+This program called substitution enables you to encrypt messages using a substitution cipher. At the time the user executes the program, they should decide, by providing a command-line argument, on what the key should be in the secret message they’ll provide at runtime.
 
 Here are a few examples of how the program might work. For example, if the user inputs a key of YTNSHKVEFXRBAUQZCLWDMIPGJO and a plaintext of HELLO:
 ```
@@ -35,7 +35,7 @@ $ ./substitution VCHPRZGJNTLSKFBDQWAXEUYMOI
 plaintext:  hello, world
 ciphertext: jrssb, ybwsp
 ```
-Notice that neither the comma nor the space were substituted by the cipher. Only substitute alphabetical characters! Notice, too, that the case of the original message has been preserved. Lowercase letters remain lowercase, and uppercase letters remain uppercase.
+Notice that neither the comma nor the space were substituted by the cipher. Only alphabetical characters are substituted. Notice, too, that the case of the original message has been preserved. Lowercase letters remain lowercase, and uppercase letters remain uppercase.
 
 Whether the characters in the key itself are uppercase or lowercase doesn’t matter. A key of VCHPRZGJNTLSKFBDQWAXEUYMOI is functionally identical to a key of vchprzgjntlskfbdqwaxeuymoi (as is, for that matter, VcHpRzGjNtLsKfBdQwAxEuYmOi).
 
@@ -56,13 +56,12 @@ Usage: ./substitution key
 ```
 
 # Specification
-Design and implement a program, substitution, that encrypts messages using a substitution cipher.
+Designed and implemented a program, substitution, that encrypts messages using a substitution cipher, according to the following.
 
-* Implement your program in a file called substitution.c in a directory called substitution.
-* Your program must accept a single command-line argument, the key to use for the substitution. The key itself should be case-insensitive, so whether any character in the key is uppercase or lowercase should not affect the behavior of your program.
-* If your program is executed without any command-line arguments or with more than one command-line argument, your program should print an error message of your choice (with printf) and return from main a value of 1 (which tends to signify an error) immediately.
-* If the key is invalid (as by not containing 26 characters, containing any character that is not an alphabetic character, or not containing each letter exactly once), your program should print an error message of your choice (with printf) and return from main a value of 1 immediately.
-* Your program must output plaintext: (without a newline) and then prompt the user for a string of plaintext (using get_string).
-* Your program must output ciphertext: (without a newline) followed by the plaintext’s corresponding ciphertext, with each alphabetical character in the plaintext substituted for the corresponding character in the ciphertext; non-alphabetical characters should be outputted unchanged.
-* Your program must preserve case: capitalized letters must remain capitalized letters; lowercase letters must remain lowercase letters.
-* After outputting ciphertext, you should print a newline. Your program should then exit by returning 0 from main.
+* The program accepts a single command-line argument, the key to use for the substitution. The key itself should be case-insensitive, so whether any character in the key is uppercase or lowercase does not affect the behavior of the program.
+* If the program is executed without any command-line arguments or with more than one command-line argument, the program prints an error message (with printf) and returns from main a value of 1 immediately.
+* If the key is invalid (as by not containing 26 characters, containing any character that is not an alphabetic character, or not containing each letter exactly once), the program prints an error message (with printf) and returns from main a value of 1 immediately.
+* The program outputs plaintext: (without a newline) and then prompts the user for a string of plaintext (using get_string).
+* The program outputs ciphertext: (without a newline) followed by the plaintext’s corresponding ciphertext, with each alphabetical character in the plaintext substituted for the corresponding character in the ciphertext; non-alphabetical characters are outputted unchanged.
+* The program preserves case: capitalized letters remain capitalized letters; lowercase letters remain lowercase letters.
+* After outputting ciphertext, it prints a newline. The program then exits by returning 0 from main.
